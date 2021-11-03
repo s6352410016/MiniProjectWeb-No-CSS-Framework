@@ -1,14 +1,11 @@
 ::-webkit-scrollbar{
-    transition:width .3s ease;
-    width:5px;
-    background-color:transparent;
-    }
-    ::-webkit-scrollbar-thumb{
-    background-color: black;
-    width:50px;
-    border-radius: 50rem;
-    }
-
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.7);
+}
 *{
     margin: 0;
     padding: 0;
@@ -118,9 +115,10 @@ section{
 }
 .navigation{
     position: absolute;
-    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    margin-top: -40px;
+    justify-content: center;
     display: flex;
 }
 .bar{
@@ -132,11 +130,10 @@ section{
     transition: 0.4s;
 }
 .bar:hover{
-    background-color: #fff;
+    background: #fff;
 }
-input[name="r"]{
-    position: absolute;
-    visibility: hidden;
+.slides input[type="radio"]{
+    display: none;
 }
 .slides{
     width: 700%;
@@ -152,26 +149,62 @@ input[name="r"]{
     height: 100%;
     -webkit-user-drag: none;
 }
-#r1:checked ~ .s1{
+#radio1:checked ~ .s1{
     margin-left: 0;
 }
-#r2:checked ~ .s1{
+#radio2:checked ~ .s1{
     margin-left: -20%;
 }
-#r3:checked ~ .s1{
+#radio3:checked ~ .s1{
     margin-left: -40%;
 }
-#r4:checked ~ .s1{
+#radio4:checked ~ .s1{
     margin-left: -60%;
 }
-#r5:checked ~ .s1{
+#radio5:checked ~ .s1{
     margin-left: -80%;
 }
-#r6:checked ~ .s1{
+#radio6:checked ~ .s1{
     margin-left: -100%;
 }
-#r7:checked ~ .s1{
+#radio7:checked ~ .s1{
     margin-left: -120%;
+}
+.navigation-auto{
+    position: absolute;
+    margin-top: 460px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+.navigation-auto div{
+    width: 50px;
+    height: 10px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #fff;
+}
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #fff;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #fff;
+}
+#radio4:checked ~ .navigation-auto .auto-btn4{
+    background: #fff;
+}
+#radio5:checked ~ .navigation-auto .auto-btn5{
+    background: #fff;
+}
+#radio6:checked ~ .navigation-auto .auto-btn6{
+    background: #fff;
+}
+#radio7:checked ~ .navigation-auto .auto-btn7{
+    background: #fff;
 }
 /* end imageslide */
 
@@ -335,7 +368,13 @@ button:hover{
         height: 400px;
     }
     .bar{
-        width: 40px;
+        width: 50px;
+    }
+    .navigation{
+        margin-top: -40px;
+    }
+    .navigation-auto{
+        margin-top: 360px;
     }
     /* end slide image */
 
@@ -403,10 +442,19 @@ button:hover{
 
     /* start slide image */
     .slidershow{
-        height: 350px;
+        height: 300px;
     }
     .bar{
         width: 30px;
+    }
+    .navigation-auto div{
+        width: 30px;
+    }
+    .navigation{
+        margin-top: -40px;
+    }
+    .navigation-auto{
+        margin-top: 260px;
     }
     /* end slide image */
 

@@ -19,4 +19,13 @@ var typed = new Typed('#type', {
     backSpeed: 50,
     fadeOut: true,
   });
+  
 
+let value = 1;
+setInterval(() => {
+    document.getElementById('radio' + value).checked = true;
+    value++;
+    if(value > 7){
+        value = 1; 
+    }
+},5000);
